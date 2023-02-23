@@ -3,15 +3,15 @@ openapi: 3.0.3
 info:
   title: DVSA - Vehicle Recalls Service API
   description: |-
-    The Vehicle Recalls Service API allows vehicle manufacturers to supply outstanding safety recall data to DVSA.
+    The Vehicle Recalls Service API allows vehicle manufacturers to supply outstanding recall data to DVSA.
 
     The API is based on REST principles. The response data is in JSON format and uses standard HTTP error response codes.
 
     You can use the API from 4 different endpoints. For a given Vehicle Identification Number (VIN), you can:
-    - create a new safety recall
-    - mark a safety recall as fixed
-    - get safety recall information
-    - delete a safety recall added in error
+    - create a new recall
+    - mark a recall as fixed
+    - get recall information
+    - delete a recall added in error
 
     **Authentication**
 
@@ -61,7 +61,7 @@ paths:
     post:
       tags:
       - recalls
-      summary: Create a new safety recall for a single vehicle
+      summary: Create a new recall for a single vehicle
       description: |-
         ```
         POST /recalls
@@ -102,13 +102,13 @@ paths:
     get:
       tags:
       - recalls
-      summary: Get all safety recall information for a single vehicle
+      summary: Get all recall information for a single vehicle
       description: |-
         ```
         GET /recalls/vin/{vin}
         ```
 
-        A vehicle with more than one safety recall will return multiple entries. To only return information for a specific recall campaign, include the manufacturer or DVSA campaign reference as a query parameter.
+        A vehicle with more than one recall will return multiple entries. To only return information for a specific recall campaign, include the manufacturer or DVSA campaign reference as a query parameter.
       parameters:
       - $ref: '#/components/parameters/vinParam'
       # Either manufacturerCampaignReferenceParam OR dvsaCampaignReferenceParam
@@ -134,7 +134,7 @@ paths:
     put:
       tags:
       - recalls
-      summary: Update a vehicle’s safety recall as fixed
+      summary: Update a vehicle’s recall as fixed
       description: |-
         ```
         PUT /recalls/vin/{vin}
@@ -181,13 +181,13 @@ paths:
     delete:
       tags:
       - recalls
-      summary: Delete a safety recall for a single vehicle
+      summary: Delete a recall for a single vehicle
       description: |-
         ```
         DELETE /recalls/vin/{vin}
         ```
 
-        If a vehicle has multiple safety recalls but you are only deleting a specific recall, include the manufacturer or DVSA campaign reference as a query parameter.
+        If a vehicle has multiple recalls but you are only deleting a specific recall, include the manufacturer or DVSA campaign reference as a query parameter.
 
         **Response**
 
@@ -279,7 +279,7 @@ components:
   schemas:
     recallsCreateRequest:
       type: object
-      description: The create a safety recall request body
+      description: The create a recall request body
       properties:
         vin:
           $ref: '#/components/schemas/vin'
@@ -291,7 +291,7 @@ components:
           $ref: '#/components/schemas/date'
     recallsUpdateRequest:
       type: object
-      description: The update a safety recall request body
+      description: The update a recall request body
       properties:
         rectificationDate:
           $ref: '#/components/schemas/rectificationDate'
@@ -313,12 +313,12 @@ components:
           $ref: '#/components/schemas/manufacturer'
         recalls:
           type: array
-          description: The array containing safety recall information. A vehicle with more than one recall will return multiple entries.
+          description: The array containing recall information. A vehicle with more than one recall will return multiple entries.
           items:
             $ref: '#/components/schemas/recallsDataResponseDetail'
     recallsDataResponseDetail:
       type: object
-      description: A single safety recall identified by its campaign references, campaign start date and state of repair
+      description: A single recall identified by its campaign references, campaign start date and state of repair
       properties:
         manufacturerCampaignReference:
           $ref: '#/components/schemas/manufacturerCampaignReference'
