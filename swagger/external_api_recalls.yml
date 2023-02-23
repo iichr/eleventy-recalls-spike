@@ -21,7 +21,7 @@ info:
 
     **We strongly recommend that you cache the access token.** This will avoid errors caused by too many requests.
 
-    You can use the [Microsoft Authentication Library (MSAL)] (https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-acquire-cache-tokens), which caches and refreshes tokens automatically.
+    You can use the [Microsoft Authentication Library (MSAL)](https://learn.microsoft.com/en-us/azure/active-directory/develop/msal-acquire-cache-tokens), which caches and refreshes tokens automatically.
 
     **Example request**
 
