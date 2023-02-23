@@ -1,6 +1,6 @@
 ---
 layout: sub-navigation
-order: 2
+order: 1
 includeInBreadcrumbs: true
 title: Use the API to send data
 ---
@@ -78,7 +78,7 @@ If you have a large number of historic vehicles with an open recall, you can use
 
 ## API Reference
 
-Visit the [OpenAPI Specification page](/api-spec/). [You can also view the OpenAPI specification in YML format](/api-spec/external_api_recalls.yml).
+Visit the [OpenAPI Specification page](/recalls/external-api/vehicle-recalls-service/api-spec/). [You can also view the OpenAPI specification in YML format](/recalls/external-api/vehicle-recalls-service/api-spec/external_api_recalls.yml).
 
 ---
 

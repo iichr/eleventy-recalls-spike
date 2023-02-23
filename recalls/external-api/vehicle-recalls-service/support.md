@@ -1,6 +1,6 @@
 ---
 layout: sub-navigation
-order: 5
+order: 4
 includeInBreadcrumbs: true
 title: Support
 ---

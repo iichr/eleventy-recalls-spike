@@ -1,6 +1,6 @@
 ---
 layout: sub-navigation
-order: 3
+order: 2
 includeInBreadcrumbs: true
 title: Use SFTP to send data
 ---

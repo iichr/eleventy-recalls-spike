@@ -4,13 +4,13 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
     eleventyConfig.addPlugin(govukEleventyPlugin, {
         header: {
-            productName: 'DVSA Vehicle Recalls Service',
+            productName: 'DVSA API Documentation',
             homepageUrl: '/',
             search: {
                 indexPath: '/search.json',
             },
         },
-        homeKey: 'DVSA Vehicle Recalls Service',
+        homeKey: 'DVSA API Documentation',
         headingPermalinks: true,
         stylesheets: ['/assets/swagger-ui.css']
     })
@@ -22,7 +22,8 @@ module.exports = function(eleventyConfig) {
     });
     
     // copy the recalls external api spec
-    eleventyConfig.addPassthroughCopy({"swagger/external_api_recalls.yml": "api-spec/external_api_recalls.yml"});
+    eleventyConfig.addPassthroughCopy(
+        "recalls/external-api/vehicle-recalls-service/api-spec/external_api_recalls.yml");
     // copy the swagger-ui css
     eleventyConfig.addPassthroughCopy({"swagger/assets": "assets"})
 
@@ -31,9 +32,8 @@ module.exports = function(eleventyConfig) {
         htmlTemplateEngine: 'njk',
         markdownTemplateEngine: 'njk',
         dir: {
-            layouts: '../node_modules/govuk-eleventy-plugin/layouts',
+            layouts: 'node_modules/govuk-eleventy-plugin/layouts',
             includes: '_includes',
-            input: 'recalls',
         }
     }
 };
