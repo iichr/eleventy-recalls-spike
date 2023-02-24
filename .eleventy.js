@@ -23,7 +23,7 @@ module.exports = function(eleventyConfig) {
     
     // copy the recalls external api spec
     eleventyConfig.addPassthroughCopy(
-        "recalls/external-api/vehicle-recalls-service/api-spec/external_api_recalls.yml");
+        "recalls/vehicle-recalls-service/api-spec/external_api_recalls.yml");
     // copy the swagger-ui css
     eleventyConfig.addPassthroughCopy({"swagger/assets": "assets"})
 

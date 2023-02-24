@@ -9,7 +9,7 @@ title: DVSA - Vehicle Recalls Service API v0.3.2
 <script>
   window.onload = () => {
     window.ui = SwaggerUIBundle({
-      url: '/recalls/external-api/vehicle-recalls-service/api-spec/external_api_recalls.yml',
+      url: '/recalls/vehicle-recalls-service/api-spec/external_api_recalls.yml',
       dom_id: '#swagger-ui',
     });
   };
